@@ -12,8 +12,8 @@
 
 //(*Headers(gertFrame)
 #include <wx/sizer.h>
+#include <wx/button.h>
 #include <wx/menu.h>
-#include <wx/panel.h>
 #include <wx/statusbr.h>
 #include <wx/frame.h>
 #include <wx/tglbtn.h>
@@ -33,13 +33,13 @@ class gertFrame: public wxFrame
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
         void OnButton1Click(wxCommandEvent& event);
+        void OnToggleButton1Toggle(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(gertFrame)
         static const long ID_TOGGLEBUTTON1;
-        static const long ID_PANEL1;
-        static const long ID_STATICTEXT1;
-        static const long ID_PANEL2;
+        static const long ID_stat1;
+        static const long ID_BUTTON2;
         static const long idMenuQuit;
         static const long ID_MENUITEM1;
         static const long ID_MENUITEM2;
@@ -49,11 +49,10 @@ class gertFrame: public wxFrame
 
         //(*Declarations(gertFrame)
         wxToggleButton* ToggleButton1;
-        wxPanel* Panel1;
         wxStatusBar* StatusBar1;
         wxMenu* Menu3;
-        wxStaticText* StaticText1;
-        wxPanel* Panel2;
+        wxStaticText* stext;
+        wxButton* Button2;
         wxMenuItem* MenuItem3;
         wxMenuItem* MenuItem4;
         //*)
