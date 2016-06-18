@@ -43,9 +43,9 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 }
 
 //(*IdInit(gertFrame)
-const long gertFrame::ID_TOGGLEBUTTON1 = wxNewId();
-const long gertFrame::ID_stat1 = wxNewId();
-const long gertFrame::ID_BUTTON2 = wxNewId();
+const long gertFrame::ID_txc1 = wxNewId();
+const long gertFrame::ID_TEXTCTRL2 = wxNewId();
+const long gertFrame::ID_TEXTCTRL3 = wxNewId();
 const long gertFrame::idMenuQuit = wxNewId();
 const long gertFrame::ID_MENUITEM1 = wxNewId();
 const long gertFrame::ID_MENUITEM2 = wxNewId();
@@ -71,12 +71,12 @@ gertFrame::gertFrame(wxWindow* parent,wxWindowID id)
     Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
     SetClientSize(wxSize(90,80));
     FlexGridSizer1 = new wxFlexGridSizer(0, 3, 0, 0);
-    ToggleButton1 = new wxToggleButton(this, ID_TOGGLEBUTTON1, _("Enter phone number"), wxDefaultPosition, wxSize(133,22), 0, wxDefaultValidator, _T("ID_TOGGLEBUTTON1"));
-    FlexGridSizer1->Add(ToggleButton1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    stext = new wxStaticText(this, ID_stat1, _("Label"), wxDefaultPosition, wxSize(94,33), 0, _T("ID_stat1"));
-    FlexGridSizer1->Add(stext, 0, wxALIGN_LEFT, 0);
-    Button2 = new wxButton(this, ID_BUTTON2, _("Reset"), wxDefaultPosition, wxSize(85,24), 0, wxDefaultValidator, _T("ID_BUTTON2"));
-    FlexGridSizer1->Add(Button2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    TextCtrl1 = new wxTextCtrl(this, ID_txc1, _("Text"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_txc1"));
+    FlexGridSizer1->Add(TextCtrl1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    TextCtrl2 = new wxTextCtrl(this, ID_TEXTCTRL2, _("Text"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+    FlexGridSizer1->Add(TextCtrl2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    TextCtrl3 = new wxTextCtrl(this, ID_TEXTCTRL3, _("Text"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL3"));
+    FlexGridSizer1->Add(TextCtrl3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(FlexGridSizer1);
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
@@ -103,7 +103,7 @@ gertFrame::gertFrame(wxWindow* parent,wxWindowID id)
     SetSizer(FlexGridSizer1);
     Layout();
 
-    Connect(ID_TOGGLEBUTTON1,wxEVT_COMMAND_TOGGLEBUTTON_CLICKED,(wxObjectEventFunction)&gertFrame::OnToggleButton1Toggle);
+    Connect(ID_txc1,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&gertFrame::OnQuit);
     Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gertFrame::OnQuit);
     Connect(ID_MENUITEM2,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gertFrame::OnButton1Click);
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gertFrame::OnAbout);
@@ -120,7 +120,7 @@ void gertFrame::OnQuit(wxCommandEvent& event)
 {
     Close();
 }
-
+virtual void TextCtrl1::SetMaxLength(4)
 void gertFrame::OnAbout(wxCommandEvent& event)
 {
     wxString msg = wxbuildinfo(long_f);
@@ -134,5 +134,4 @@ void gertFrame::OnButton1Click(wxCommandEvent& event)
 void gertFrame::OnToggleButton1Toggle(wxCommandEvent& event)
 {
     phone += 1;
-    stext->SetLabel(phone)
 }

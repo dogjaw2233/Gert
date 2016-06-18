@@ -12,12 +12,10 @@
 
 //(*Headers(gertFrame)
 #include <wx/sizer.h>
-#include <wx/button.h>
 #include <wx/menu.h>
 #include <wx/statusbr.h>
 #include <wx/frame.h>
-#include <wx/tglbtn.h>
-#include <wx/stattext.h>
+#include <wx/textctrl.h>
 //*)
 
 class gertFrame: public wxFrame
@@ -37,9 +35,9 @@ class gertFrame: public wxFrame
         //*)
 
         //(*Identifiers(gertFrame)
-        static const long ID_TOGGLEBUTTON1;
-        static const long ID_stat1;
-        static const long ID_BUTTON2;
+        static const long ID_txc1;
+        static const long ID_TEXTCTRL2;
+        static const long ID_TEXTCTRL3;
         static const long idMenuQuit;
         static const long ID_MENUITEM1;
         static const long ID_MENUITEM2;
@@ -48,13 +46,13 @@ class gertFrame: public wxFrame
         //*)
 
         //(*Declarations(gertFrame)
-        wxToggleButton* ToggleButton1;
+        wxTextCtrl* TextCtrl3;
         wxStatusBar* StatusBar1;
         wxMenu* Menu3;
-        wxStaticText* stext;
-        wxButton* Button2;
         wxMenuItem* MenuItem3;
+        wxTextCtrl* TextCtrl1;
         wxMenuItem* MenuItem4;
+        wxTextCtrl* TextCtrl2;
         //*)
 
         DECLARE_EVENT_TABLE()

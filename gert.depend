@@ -580,14 +580,12 @@
 
 1449428242 /usr/include/wx-3.0/wx/gtk/app.h
 
-1466245767 /home/dogjaw2233/projects/gert/gertMain.h
+1466249754 /home/dogjaw2233/projects/gert/gertMain.h
 	<wx/sizer.h>
-	<wx/button.h>
 	<wx/menu.h>
 	<wx/statusbr.h>
 	<wx/frame.h>
-	<wx/tglbtn.h>
-	<wx/stattext.h>
+	<wx/textctrl.h>
 
 1449428239 /usr/include/wx-3.0/wx/sizer.h
 	"wx/defs.h"
