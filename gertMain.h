@@ -2,7 +2,7 @@
  * Name:      gertMain.h
  * Purpose:   Defines Application Frame
  * Author:     ()
- * Created:   2016-06-17
+ * Created:   2016-06-21
  * Copyright:  ()
  * License:
  **************************************************************/
@@ -12,10 +12,12 @@
 
 //(*Headers(gertFrame)
 #include <wx/sizer.h>
+#include <wx/button.h>
 #include <wx/menu.h>
+#include <wx/panel.h>
 #include <wx/statusbr.h>
 #include <wx/frame.h>
-#include <wx/textctrl.h>
+#include <wx/stattext.h>
 //*)
 
 class gertFrame: public wxFrame
@@ -31,28 +33,22 @@ class gertFrame: public wxFrame
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
         void OnButton1Click(wxCommandEvent& event);
-        void OnToggleButton1Toggle(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(gertFrame)
-        static const long ID_txc1;
-        static const long ID_TEXTCTRL2;
-        static const long ID_TEXTCTRL3;
+        static const long ID_BUTTON1;
+        static const long ID_STATICTEXT1;
+        static const long ID_PANEL1;
         static const long idMenuQuit;
-        static const long ID_MENUITEM1;
-        static const long ID_MENUITEM2;
         static const long idMenuAbout;
         static const long ID_STATUSBAR1;
         //*)
 
         //(*Declarations(gertFrame)
-        wxTextCtrl* TextCtrl3;
+        wxPanel* Panel1;
         wxStatusBar* StatusBar1;
-        wxMenu* Menu3;
-        wxMenuItem* MenuItem3;
-        wxTextCtrl* TextCtrl1;
-        wxMenuItem* MenuItem4;
-        wxTextCtrl* TextCtrl2;
+        wxButton* Button1;
+        wxStaticText* StaticText1;
         //*)
 
         DECLARE_EVENT_TABLE()

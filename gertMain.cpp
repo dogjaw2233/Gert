@@ -2,7 +2,7 @@
  * Name:      gertMain.cpp
  * Purpose:   Code for Application Frame
  * Author:     ()
- * Created:   2016-06-17
+ * Created:   2016-06-21
  * Copyright:  ()
  * License:
  **************************************************************/
@@ -16,7 +16,6 @@
 //*)
 
 //helper functions
-int phone = 0;
 enum wxbuildinfoformat {
     short_f, long_f };
 
@@ -43,12 +42,10 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 }
 
 //(*IdInit(gertFrame)
-const long gertFrame::ID_txc1 = wxNewId();
-const long gertFrame::ID_TEXTCTRL2 = wxNewId();
-const long gertFrame::ID_TEXTCTRL3 = wxNewId();
+const long gertFrame::ID_BUTTON1 = wxNewId();
+const long gertFrame::ID_STATICTEXT1 = wxNewId();
+const long gertFrame::ID_PANEL1 = wxNewId();
 const long gertFrame::idMenuQuit = wxNewId();
-const long gertFrame::ID_MENUITEM1 = wxNewId();
-const long gertFrame::ID_MENUITEM2 = wxNewId();
 const long gertFrame::idMenuAbout = wxNewId();
 const long gertFrame::ID_STATUSBAR1 = wxNewId();
 //*)
@@ -68,27 +65,20 @@ gertFrame::gertFrame(wxWindow* parent,wxWindowID id)
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
 
-    Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
-    SetClientSize(wxSize(90,80));
+    Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
+    SetClientSize(wxSize(95,72));
     FlexGridSizer1 = new wxFlexGridSizer(0, 3, 0, 0);
-    TextCtrl1 = new wxTextCtrl(this, ID_txc1, _("Text"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_txc1"));
-    FlexGridSizer1->Add(TextCtrl1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    TextCtrl2 = new wxTextCtrl(this, ID_TEXTCTRL2, _("Text"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
-    FlexGridSizer1->Add(TextCtrl2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    TextCtrl3 = new wxTextCtrl(this, ID_TEXTCTRL3, _("Text"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL3"));
-    FlexGridSizer1->Add(TextCtrl3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    Panel1 = new wxPanel(this, ID_PANEL1, wxDefaultPosition, wxSize(300,48), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
+    Panel1->SetMaxSize(wxSize(-1,-1));
+    Button1 = new wxButton(Panel1, ID_BUTTON1, _("Click to enter phone number"), wxPoint(0,0), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    StaticText1 = new wxStaticText(Panel1, ID_STATICTEXT1, _("Enter your phone number"), wxPoint(0,32), wxSize(184,16), 0, _T("ID_STATICTEXT1"));
+    FlexGridSizer1->Add(Panel1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(FlexGridSizer1);
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
     MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
     Menu1->Append(MenuItem1);
     MenuBar1->Append(Menu1, _("&File"));
-    Menu3 = new wxMenu();
-    MenuItem3 = new wxMenuItem(Menu3, ID_MENUITEM1, _("back"), wxEmptyString, wxITEM_NORMAL);
-    Menu3->Append(MenuItem3);
-    MenuItem4 = new wxMenuItem(Menu3, ID_MENUITEM2, _("out"), wxEmptyString, wxITEM_NORMAL);
-    Menu3->Append(MenuItem4);
-    MenuBar1->Append(Menu3, _("jump"));
     Menu2 = new wxMenu();
     MenuItem2 = new wxMenuItem(Menu2, idMenuAbout, _("About\tF1"), _("Show info about this application"), wxITEM_NORMAL);
     Menu2->Append(MenuItem2);
@@ -103,13 +93,13 @@ gertFrame::gertFrame(wxWindow* parent,wxWindowID id)
     SetSizer(FlexGridSizer1);
     Layout();
 
-    Connect(ID_txc1,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&gertFrame::OnQuit);
+    Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&gertFrame::OnButton1Click);
     Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gertFrame::OnQuit);
-    Connect(ID_MENUITEM2,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gertFrame::OnButton1Click);
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gertFrame::OnAbout);
     //*)
 }
-
+int phone1, phone2 = 0;
+std::string pnum1, pnum2, finum;
 gertFrame::~gertFrame()
 {
     //(*Destroy(gertFrame)
@@ -120,7 +110,7 @@ void gertFrame::OnQuit(wxCommandEvent& event)
 {
     Close();
 }
-virtual void TextCtrl1::SetMaxLength(4)
+
 void gertFrame::OnAbout(wxCommandEvent& event)
 {
     wxString msg = wxbuildinfo(long_f);
@@ -128,10 +118,14 @@ void gertFrame::OnAbout(wxCommandEvent& event)
 }
 
 void gertFrame::OnButton1Click(wxCommandEvent& event)
-{Close();
-}
-
-void gertFrame::OnToggleButton1Toggle(wxCommandEvent& event)
 {
-    phone += 1;
+    phone1 = rand() % 899 + 100;
+    phone2 = rand() % 8999 + 1000;
+    pnum1 = std::to_string(phone1);
+    pnum2 = std::to_string(phone2);
+    finum = pnum1 + " - " + pnum2;
+    Button1->SetLabel(finum);
+    if(phone1 > 999){
+
+    }
 }

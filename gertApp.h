@@ -2,7 +2,7 @@
  * Name:      gertApp.h
  * Purpose:   Defines Application Class
  * Author:     ()
- * Created:   2016-06-17
+ * Created:   2016-06-21
  * Copyright:  ()
  * License:
  **************************************************************/

@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1466211603 source:/home/dogjaw2233/projects/gert/gertApp.cpp
+1466506566 source:/home/dogjaw2233/projects/gert/gertApp.cpp
 	"gertApp.h"
 	"gertMain.h"
 	<wx/image.h>
 
-1466211603 /home/dogjaw2233/projects/gert/gertApp.h
+1466506566 /home/dogjaw2233/projects/gert/gertApp.h
 	<wx/app.h>
 
 1449428234 /usr/include/wx-3.0/wx/app.h
@@ -580,12 +580,14 @@
 
 1449428242 /usr/include/wx-3.0/wx/gtk/app.h
 
-1466249754 /home/dogjaw2233/projects/gert/gertMain.h
+1466507491 /home/dogjaw2233/projects/gert/gertMain.h
 	<wx/sizer.h>
+	<wx/button.h>
 	<wx/menu.h>
+	<wx/panel.h>
 	<wx/statusbr.h>
 	<wx/frame.h>
-	<wx/textctrl.h>
+	<wx/stattext.h>
 
 1449428239 /usr/include/wx-3.0/wx/sizer.h
 	"wx/defs.h"
@@ -962,7 +964,7 @@
 
 1449428243 /usr/include/wx-3.0/wx/gtk/frame.h
 
-1466241808 source:/home/dogjaw2233/projects/gert/gertMain.cpp
+1466507746 source:/home/dogjaw2233/projects/gert/gertMain.cpp
 	"gertMain.h"
 	<wx/msgdlg.h>
 	<wx/string.h>
@@ -1030,21 +1032,6 @@
 1449428238 /usr/include/wx-3.0/wx/generic/panelg.h
 	"wx/bitmap.h"
 
-1449428242 /usr/include/wx-3.0/wx/tglbtn.h
-	"wx/defs.h"
-	"wx/event.h"
-	"wx/anybutton.h"
-	"wx/univ/tglbtn.h"
-	"wx/msw/tglbtn.h"
-	"wx/gtk/tglbtn.h"
-	"wx/gtk1/tglbtn.h"
-	"wx/motif/tglbtn.h"
-	"wx/osx/tglbtn.h"
-	"wx/os2/tglbtn.h"
-
-1449428244 /usr/include/wx-3.0/wx/gtk/tglbtn.h
-	"wx/bitmap.h"
-
 1449428239 /usr/include/wx-3.0/wx/stattext.h
 	"wx/defs.h"
 	"wx/control.h"
@@ -1058,42 +1045,4 @@
 	"wx/os2/stattext.h"
 
 1449428244 /usr/include/wx-3.0/wx/gtk/stattext.h
-
-1449428239 /usr/include/wx-3.0/wx/textctrl.h
-	"wx/defs.h"
-	"wx/control.h"
-	"wx/textentry.h"
-	"wx/dynarray.h"
-	"wx/gdicmn.h"
-	"wx/ioswrap.h"
-	"wx/x11/textctrl.h"
-	"wx/univ/textctrl.h"
-	"wx/msw/wince/textctrlce.h"
-	"wx/msw/textctrl.h"
-	"wx/motif/textctrl.h"
-	"wx/gtk/textctrl.h"
-	"wx/gtk1/textctrl.h"
-	"wx/osx/textctrl.h"
-	"wx/cocoa/textctrl.h"
-	"wx/os2/textctrl.h"
-
-1449428239 /usr/include/wx-3.0/wx/textentry.h
-	"wx/filefn.h"
-	"wx/gdicmn.h"
-	"wx/gtk/textentry.h"
-	"wx/osx/textentry.h"
-	"wx/msw/textentry.h"
-	"wx/motif/textentry.h"
-	"wx/os2/textentry.h"
-
-1449428244 /usr/include/wx-3.0/wx/gtk/textentry.h
-
-1449428235 /usr/include/wx-3.0/wx/ioswrap.h
-	"wx/beforestd.h"
-	<iostream.h>
-	<iostream>
-	"wx/afterstd.h"
-	"wx/msw/winundef.h"
-
-1449428244 /usr/include/wx-3.0/wx/gtk/textctrl.h
 
