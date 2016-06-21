@@ -51,6 +51,7 @@
 					<wxFrame wxs="wxsmith/gertframe.wxs" src="gertMain.cpp" hdr="gertMain.h" fwddecl="0" i18n="1" name="gertFrame" language="CPP" />
 				</resources>
 			</wxsmith>
+			<lib_finder disable_auto="1" />
 			<debugger />
 		</Extensions>
 	</Project>
