@@ -66,9 +66,9 @@ gertFrame::gertFrame(wxWindow* parent,wxWindowID id)
     wxMenu* Menu2;
 
     Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
-    SetClientSize(wxSize(95,72));
+    SetClientSize(wxSize(194,97));
     FlexGridSizer1 = new wxFlexGridSizer(0, 3, 0, 0);
-    Panel1 = new wxPanel(this, ID_PANEL1, wxDefaultPosition, wxSize(300,48), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
+    Panel1 = new wxPanel(this, ID_PANEL1, wxDefaultPosition, wxSize(183,50), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
     Panel1->SetMaxSize(wxSize(-1,-1));
     Button1 = new wxButton(Panel1, ID_BUTTON1, _("Click to enter phone number"), wxPoint(0,0), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
     StaticText1 = new wxStaticText(Panel1, ID_STATICTEXT1, _("Enter your phone number"), wxPoint(0,32), wxSize(184,16), 0, _T("ID_STATICTEXT1"));
@@ -98,8 +98,8 @@ gertFrame::gertFrame(wxWindow* parent,wxWindowID id)
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&gertFrame::OnAbout);
     //*)
 }
-int phone1, phone2 = 0;
-std::string pnum1, pnum2, finum;
+int phone1, phone2, phone3 = 0;
+std::string pnum1, pnum2, pnum3, finum;
 gertFrame::~gertFrame()
 {
     //(*Destroy(gertFrame)
@@ -120,12 +120,11 @@ void gertFrame::OnAbout(wxCommandEvent& event)
 void gertFrame::OnButton1Click(wxCommandEvent& event)
 {
     phone1 = rand() % 899 + 100;
+    phone3 = rand() % 899 + 100;
     phone2 = rand() % 8999 + 1000;
     pnum1 = std::to_string(phone1);
     pnum2 = std::to_string(phone2);
-    finum = pnum1 + " - " + pnum2;
+    pnum3 = std::to_string(phone3);
+    finum = "(" + pnum3 + ") - " + pnum1 + " - " + pnum2;
     Button1->SetLabel(finum);
-    if(phone1 > 999){
-
-    }
 }

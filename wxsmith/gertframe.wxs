@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="gertFrame">
-		<size>95,72</size>
+		<size>194,97</size>
 		<id_arg>0</id_arg>
 		<object class="wxFlexGridSizer" variable="FlexGridSizer1" member="no">
 			<cols>3</cols>
 			<object class="sizeritem">
 				<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
-					<size>300,48</size>
+					<size>183,50</size>
 					<maxsize>-1,-1</maxsize>
 					<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
 						<label>Click to enter phone number</label>
